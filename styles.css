@@ -1,0 +1,270 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+nav {
+  background-color: #555;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+nav li {
+  margin: 0 15px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  height: calc(100vh - 180px);
+  width: 100vw;
+  border-top: 2px solid #ccc;
+}
+
+.column {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  min-height: 0;
+}
+
+.left {
+  background-color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-right: 2px solid #ccc;
+}
+
+.right {
+  background-color: #d0eaff;
+}
+
+.sidebar {
+  background-color: #e8e8e8;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  position: relative;
+}
+
+/* ✅ 날짜 및 시간 스타일 - 오른쪽 정렬 */
+.datetime {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 10px;
+  gap: 6px;
+}
+
+.sidebar a {
+  color: #333;
+  text-decoration: none;
+}
+
+.sidebar a:hover {
+  text-decoration: underline;
+}
+
+.sidebar i {
+  margin-right: 5px;
+  color: black;
+}
+
+.content {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  height: 100%;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav li {
+    margin: 8px 0;
+  }
+
+  .datetime {
+    justify-content: center;
+  }
+}
+
+/* 왼쪽 이미지 스타일 */
+.left-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.left-images img {
+  width: calc(50% - 5px);
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* 오른쪽 이미지 그리드 스타일 */
+.right-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+
+.image-box {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.image-box img {
+  width: 48%;
+  border-radius: 8px;
+  border: 1px solid #aaa;
+}
+
+/* 반응형 추가 */
+@media (max-width: 768px) {
+  .left-images img,
+  .image-box img {
+    width: 100%;
+  }
+
+  .image-box {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* 기존에 작성한 CSS 유지하면서 이 부분을 추가해 주세요 */
+
+/* 왼쪽 이미지 스타일 */
+.left-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.left-images img {
+  width: calc(50% - 5px);
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* 오른쪽 이미지 그리드 스타일 */
+.right-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+
+.image-box {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.image-box img {
+  width: 48%;
+  border-radius: 8px;
+  border: 1px solid #aaa;
+}
+
+/* 패널 위치 교체: right -> 왼쪽 / left -> 오른쪽 */
+.container {
+  flex-direction: row-reverse;
+  height: calc(100vh - 180px);
+  width: 100vw;
+}
+
+/* 각각 독립 스크롤 */
+.column {
+  overflow-y: auto;
+  height: 100%;
+  min-height: 0;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .left-images img,
+  .image-box img {
+    width: 100%;
+  }
+
+  .image-box {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .datetime {
+    justify-content: center;
+  }
+}
+/* ✅ Pretendard-Regular 폰트 정의 */
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* ✅ 전체 웹사이트에 Pretendard-Regular 적용 */
+html, body {
+  height: 100%;
+  font-family: 'Pretendard-Regular', sans-serif;
+}
+
+
+

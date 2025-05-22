@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Victourue's portpolio</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header>
+    <h1>PortPolio</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="workspace.html">Workspace</a></li>
+      <li><a href="artist.html">Artist</a></li>
+    </ul>
+  </nav>  
+
+  <div class="container">
+    
+    <div class="column right">
+      <h2>Work Space</h2>
+      <p>스팀 작업 프로그램</p>
+
+      <div class="right-grid">
+        <div class="image-box">
+          <img src="pigma.png" alt="right1" />
+          <img src="pigma work space.png" alt="right2" />
+        </div>
+        <h2>스팀 리디자인 계기</h2>
+        <p>스팀 앱 리디자인을 한 계기는 제가 스팀 게임 구매대행 및 실행 어플의 사용으로부터 시작됩니다.
+           스팀 앱을 사용해 보셨던 유저분들께서 알고 계시는지 모르겠지만 스팀 앱의 아이콘이 조금 직관적이지 
+           못한 모양이어서 어떤 기능으로 되어있는지 알기 힘든 경우가 있습니다. 아이콘을 일일이 눌러가며 
+           자신이 원하는 서비스를 찾아야하는 번거러움이 있죠, 이것을 해결하기 위해서 제가 스팀의 직관적이지 
+           못한 아이콘을 찾아 리디자인을 해보아야겠다라는 생각을 가지게 되었습니다. 그 외에도 저는 2D, 3D 작업도 하고 있습니다. 
+           추후에 다른 다양한 작품들도 올릴 예정이니 많은 관심 부탁드립니다.
+        </p>
+      </div>      
+    </div>
+
+    <div class="column left">
+      <div class="sidebar">
+        <div id="datetime" class="datetime"></div>
+        <h3>Contact</h3>
+        <p>
+          <i class="fab fa-instagram" style="color: black;"></i>
+          <a href="https://www.instagram.com/victourue/" target="_blank">Instagram</a>
+        </p>
+        <p>✉️ qpek1232012@gmail.com</p>
+      </div>
+
+      <div class="content">
+        <h2>Artist</h2>
+        <p>Victourue</p>
+        <div class="left-images">
+          <img src="victourue1.jpg" alt="left1" />
+          <img src="victourue2.jpg" alt="left2" />
+          <img src="victourue3.jpg" alt="left3" />
+          <img src="crodail.jpg" width="300" height="300" alt="left3" />
+        </div>        
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>2025 © victourue's portfolio</p>
+  </footer>
+
+  <!-- JavaScript:  실시간 날짜/시간 -->
+  <script>
+    function updateDateTime() {
+      const now = new Date();
+      const year = now.getFullYear();
+      const month = String(now.getMonth() + 1).padStart(2, '0');
+      const date = String(now.getDate()).padStart(2, '0');
+      const hours = now.getHours();
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
+
+      const formattedDate = `${year}년 ${month}월 ${date}일 ${hours}시 ${minutes}분 ${seconds}초`;
+
+      let iconClass = "fa-moon";
+      if (hours >= 6 && (hours < 17 || (hours === 17 && now.getMinutes() < 30))) {
+        iconClass = "fa-sun";
+      }
+
+      document.getElementById("datetime").innerHTML = `
+        <span>${formattedDate}</span>
+        <i class="fas ${iconClass}"></i>
+      `;
+    }
+
+    updateDateTime();
+    setInterval(updateDateTime, 1000);
+  </script>
+
+</body>
+</html>
+
+
+
+
